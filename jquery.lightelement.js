@@ -1,4 +1,3 @@
-
 var currentlyLighted;
 var currentlyCssClass;
 
@@ -66,7 +65,7 @@ $.fn.unlightElement = function() {
 }
 
 $.fn.lightElement = function(cssClass) {
-	currentlyCssClass = cssClass || "defaul-overlay";
+	currentlyCssClass = cssClass || "default-overlay";
 
 	var me = $(this);
 
