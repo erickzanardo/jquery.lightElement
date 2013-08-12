@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jquery.lightElement</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="style.css" rel="stylesheet" media="screen">
+	</head>
+	<body>
+		<div class="container" class="align-center">
+			<h1>LightElement example</h1>
+			<iframe id="player" width="640" height="360" src="//www.youtube.com/embed/jK8Krk4pZ7s" frameborder="0" allowfullscreen></iframe>
+			<div>
+				<button class="btn btn-mini light-element">Turn lights off</button>
+			</div>
+
+			<h2>Code</h2>
+			<pre>
+
+			.default-overlay {
+				background-color: #000;
+				opacity: 0.7;
+				z-index: 3;
+			}
+
+
+			$(".light-element").click(function() {
+				$("#player").lightElement();
+			});
+
+			$(document).on("click", ".default-overlay", function() {
+				$("#player").unlightElement();
+			});
+			</pre>
+		</div>
+		<script src="http://code.jquery.com/jquery.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="jquery.lightelement.js"></script>
+		<script type="text/javascript">
+			$(".light-element").click(function() {
+				$("#player").lightElement();
+			});
+
+			$(document).on("click", ".default-overlay", function() {
+				$("#player").unlightElement();
+			});
+		</script>
+	</body>
+</html>
