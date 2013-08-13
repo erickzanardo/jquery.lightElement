@@ -15,23 +15,30 @@
 			</div>
 
 			<h2>Code</h2>
-			<pre>
+			<div class="row">
+				<div class="span6">
+					<h3>CSS</h3>
+					<pre>
+.default-overlay {
+	background-color: #000;
+	opacity: 0.7;
+	z-index: 3;
+}
+					</pre>
+				</div>
+				<div class="span6">
+					<h3>JavaScript</h3>
+					<pre>
+$(".light-element").click(function() {
+	$("#player").lightElement();
+});
 
-			.default-overlay {
-				background-color: #000;
-				opacity: 0.7;
-				z-index: 3;
-			}
-
-
-			$(".light-element").click(function() {
-				$("#player").lightElement();
-			});
-
-			$(document).on("click", ".default-overlay", function() {
-				$("#player").unlightElement();
-			});
-			</pre>
+$(document).on("click", ".default-overlay", function() {
+	$("#player").unlightElement();
+});
+					</pre>
+				</div>
+			</div>
 		</div>
 		<script src="http://code.jquery.com/jquery.js"></script>
 		<script src="js/bootstrap.min.js"></script>
