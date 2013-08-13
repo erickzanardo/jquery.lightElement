@@ -9,17 +9,21 @@
 	<body>
 		<div class="container" class="align-center">
 			<h1>LightElement example</h1>
-			<iframe id="player" width="640" height="360" src="//www.youtube.com/embed/jK8Krk4pZ7s" frameborder="0" allowfullscreen></iframe>
+			
+			<p>
+				This is a simple example showing how to use the lightElement plugin, it is used to focus a element by creating opaque blocks surrounding it.
+				<strong>Important</strong> this plugin "light" one element at time. So before "lighting" another element it's important to unlight the currently before.
+			</p>
+			
+			<iframe id="player" width="940" height="560" src="//www.youtube.com/embed/jK8Krk4pZ7s" frameborder="0" allowfullscreen></iframe>
 			<div>
-				<button class="btn btn-mini light-element">Turn lights off</button>
+				<button class="btn btn-primary btn-mini light-element">Turn lights off</button>
 			</div>
-
 			<h2>Code</h2>
 			<pre>
-
 			.default-overlay {
 				background-color: #000;
-				opacity: 0.7;
+				opacity: 0.9;
 				z-index: 3;
 			}
 
@@ -32,6 +36,20 @@
 				$("#player").unlightElement();
 			});
 			</pre>
+			<div class="well">
+				<h3>Links</h3>
+				<ul class="unstyled">
+					<li>
+						<a href="jquery.lightelement.js">Download source</a>
+					</li>
+					<li>
+						<a href="https://github.com/erickzanardo/jquery.lightElement">Github page</a>
+					</li>
+					<li>
+						<small>Page built with <a href="http://getbootstrap.com/2.3.2/">Bootstrap</a></small>
+					</li>
+				</ul>
+			</div>
 		</div>
 		<script src="http://code.jquery.com/jquery.js"></script>
 		<script src="js/bootstrap.min.js"></script>
