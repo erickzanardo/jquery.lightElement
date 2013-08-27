@@ -2,6 +2,7 @@
 
 	var currentlyLighted;
 	var currentlyCssClass;
+	var currentlyOpts;
 
 	var resetElement = function() {
 		if (currentlyLighted) {
@@ -28,14 +29,12 @@
 		return d;
 	};
 
-	var processElement = function(me) {
+	var processElement = function(me, opts) {
 		var o = me.offset();
 		var w = me.width();
 		var h = me.height();
 		var dH = $(document).height();
 		var dW = $(document).width();
-
-		var opts = me.data("opts");
 
 		var topDiv = createDiv();
 		topDiv.css("left", "0px");
@@ -43,7 +42,7 @@
 		topDiv.css("width", "100%");
 		topDiv.height(o.top);
 
-		if (opts.topElement) {
+		if (currentlyOpts.topElement) {
 			topDiv.append(opts.topElement);
 		}
 
@@ -77,7 +76,7 @@
 		currentlyCssClass = opts.cssClass || "default-overlay";
 
 		var me = $(this);
-		me.data("opts", opts);
+		currentlyOpts = opts;
 
 		processElement(me);
 
