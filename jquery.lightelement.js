@@ -43,7 +43,7 @@
 		topDiv.height(o.top);
 
 		if (currentlyOpts.topElement) {
-			topDiv.append(opts.topElement);
+			topDiv.append(currentlyOpts.topElement);
 		}
 
 		var bottomDiv = createDiv();
