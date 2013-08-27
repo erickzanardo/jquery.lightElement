@@ -73,6 +73,7 @@
 	}
 
 	$.fn.lightElement = function(opts) {
+		opts = opts || {};
 		currentlyCssClass = opts.cssClass || "default-overlay";
 
 		var me = $(this);
