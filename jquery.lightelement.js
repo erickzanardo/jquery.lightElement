@@ -35,11 +35,17 @@
 		var dH = $(document).height();
 		var dW = $(document).width();
 
+		var opts = me.data("opts");
+
 		var topDiv = createDiv();
 		topDiv.css("left", "0px");
 		topDiv.css("top", "0px");
 		topDiv.css("width", "100%");
 		topDiv.height(o.top);
+
+		if (opts.topElement) {
+			topDiv.append(opts.topElement);
+		}
 
 		var bottomDiv = createDiv();
 		bottomDiv.css("left", "0px");
@@ -66,10 +72,11 @@
 		currentlyCssClass = null;
 	}
 
-	$.fn.lightElement = function(cssClass) {
-		currentlyCssClass = cssClass || "default-overlay";
+	$.fn.lightElement = function(opts) {
+		currentlyCssClass = opts.cssClass || "default-overlay";
 
 		var me = $(this);
+		me.data("opts", opts);
 
 		processElement(me);
 

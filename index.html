@@ -35,7 +35,11 @@
 					<h3>JavaScript</h3>
 					<pre>
 $(".light-element").click(function() {
-	$("#player").lightElement();
+	var bt = $('&lt;button class="btn"&gt;Close&lt;/button&gt;');
+	bt.click(function() {
+		$("#player").unlightElement();
+	});
+	$("#player").lightElement({topElement: bt});
 });
 
 $(document).on("click", ".default-overlay", function() {
@@ -64,7 +68,11 @@ $(document).on("click", ".default-overlay", function() {
 		<script src="jquery.lightelement.js"></script>
 		<script type="text/javascript">
 			$(".light-element").click(function() {
-				$("#player").lightElement();
+				var bt = $('<button class="btn">Close</button>');
+				bt.click(function() {
+					$("#player").unlightElement();
+				});
+				$("#player").lightElement({topElement: bt});
 			});
 
 			$(document).on("click", ".default-overlay", function() {
